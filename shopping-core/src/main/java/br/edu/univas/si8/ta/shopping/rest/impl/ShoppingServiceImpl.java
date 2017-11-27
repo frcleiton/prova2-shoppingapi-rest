@@ -18,12 +18,8 @@ public class ShoppingServiceImpl implements ShoppingService{
 		return order.listAllOrders();
 	}
 	
-	@Override
 	public String saveNewOrder(String description) {
 		order.createNewOrder(description);
-		//TODO: Retorna http 201
-		//response.setStatus(HttpServletResponse.SC_CREATED);
 		return "{\"Message\": \"Success\"}";
 	}
-	
 }
