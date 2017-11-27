@@ -8,7 +8,7 @@ import javax.ws.rs.core.Application;
 
 import br.edu.univas.si8.ta.shopping.rest.impl.ShoppingServiceImpl;
 
-@ApplicationPath("/rest")
+@ApplicationPath("/restapp")
 public class RestApplication extends Application {
 
 	@Override
