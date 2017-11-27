@@ -2,6 +2,7 @@ package br.edu.univas.si8.ta.shopping.rest.impl;
 
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
+import javax.ws.rs.core.Response;
 
 import br.edu.univas.si8.ta.shopping.ejb.interfaces.Order;
 import br.edu.univas.si8.ta.shopping.rest.api.ShoppingService;
@@ -18,8 +19,8 @@ public class ShoppingServiceImpl implements ShoppingService{
 		return order.listAllOrders();
 	}
 	
-	public String saveNewOrder(String description) {
+	public Response saveNewOrder(String description) {
 		order.createNewOrder(description);
-		return "{\"Message\": \"Success\"}";
+		return Response.status(Response.Status.CREATED).build();
 	}
 }
