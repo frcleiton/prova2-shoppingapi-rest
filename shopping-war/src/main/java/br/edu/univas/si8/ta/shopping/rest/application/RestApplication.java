@@ -14,8 +14,6 @@ public class RestApplication extends Application {
 	@Override
 	public Set<Class<?>> getClasses() {
 		Set<Class<?>> classes = new HashSet<>();
-		//classes.add(HelloServiceImpl.class);
-		//classes.add(InventoryServiceImpl.class);
 		classes.add(ShoppingServiceImpl.class);
 		return classes;
 	}
