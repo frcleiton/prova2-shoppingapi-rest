@@ -1,0 +1,24 @@
+
+apply plugin: 'ear'
+
+dependencies {
+	deploy project(path: ':shopping-war', configuration: 'archives')
+	deploy project(path: ':shopping-ejb')
+	earlib project(':shopping-core')
+	earlib project(':shopping-api')
+	earlib project(':shopping-ejb-client')
+}
+
+ear {
+	deploymentDescriptor {
+		def warName = project(':shopping-war').name
+		def warVersion = project(':shopping-war').version
+		def warFileName = warName + '-' + warVersion + '.war'
+		webModule(warFileName, 'shopping')
+
+		def ejbName = project(':shopping-ejb').name
+		def ejbVersion = project(':shopping-ejb').version
+		def ejbFileName = ejbName + '-' + ejbVersion + '.jar'
+		module(ejbFileName, 'ejb')
+	}
+}
