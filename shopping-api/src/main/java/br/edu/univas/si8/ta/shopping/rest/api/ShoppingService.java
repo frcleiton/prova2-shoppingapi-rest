@@ -7,7 +7,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-@Path("/rest")
+@Path("/restapi")
 public interface ShoppingService {
 	
 	@GET
